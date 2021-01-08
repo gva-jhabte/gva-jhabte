@@ -12,6 +12,6 @@ setup(
    author='joocer',
    author_email='justin.joyce@joocer.com',
    packages=find_packages(),
-   url="https://github.com/gva-jhabte/gva_services",
+   url="https://github.com/gva-jhabte/gva-jhabte",
    install_requires=['google-cloud-tasks', 'gva.data']
 )
