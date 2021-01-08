@@ -1,0 +1,4 @@
+google-cloud-tasks
+git+https://github.com/gva-jjoyce/gva_data_validator
+git+https://github.com/gva-jjoyce/gva_logging
+git+https://github.com/gva-jjoyce/gva_data_validator
