@@ -52,17 +52,17 @@ queue = 'my-queue'
 
 # Construct the fully qualified queue name.
 parent = client.queue_path(project, location, queue)
-print(F'the value of parent is {parent}')
 url = 'https://pls-nvd-post-3hipbvdnza-nw.a.run.app/ingest'
 payload = 'Data is ingesting!'
-in_seconds=900
+timeout=1800
+in_seconds=10
 
 # Construct the request body.
 task = {
     "http_request": {  # Specify the type of request.
         "http_method": tasks_v2.HttpMethod.POST,
         "url": url,  # The full url path that the task will be sent to.
-    }
+    },
 }
 if payload is not None:
     if isinstance(payload, dict):
@@ -73,7 +73,6 @@ if payload is not None:
     # The API expects a payload of type bytes.
     converted_payload = payload.encode()
     task["http_request"]["body"] = converted_payload
-    print(f'the converted payload is {converted_payload}')
 if in_seconds is not None:
     # Convert "seconds from now" into an rfc3339 datetime string.
     d = datetime.datetime.utcnow() + datetime.timedelta(seconds=in_seconds)
