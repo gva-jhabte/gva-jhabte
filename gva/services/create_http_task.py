@@ -73,4 +73,4 @@ def create_http_task(
     return response
 
 if __name__ == "__main__":
-    create_http_task()
+    create_http_task(project=project, queue=my-queue, url=url)
