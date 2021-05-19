@@ -23,7 +23,7 @@ def create_http_task(
     # else:
     client = tasks_v2.CloudTasksClient()
 
-    location='europe-west2'
+    location='europe-west1'
 
     project = project
     queue = queue
